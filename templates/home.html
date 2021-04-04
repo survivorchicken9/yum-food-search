@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Header -->
+<header class="masthead d-flex">
+    <div class="container text-center my-auto">
+        <h3 class="mb-1">
+            <u>byroncooks</u>
+        </h3>
+        <h1 class="mb-1">Filipino Food</h1>
+        <h3 class="mb-3">
+            <em>for the homesick and hungry</em>
+        </h3>
+        <a type="submit" class="btn btn-primary btn-xl" href="{{ url_for('search.search_recipes') }}">Start Now</a>
+    </div>
+</header>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <header><h1>Add new recipe</h1></header>
+    <section class="create-recipe-form">
+        <form method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Adobo">
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" class="form-control" id="category" name="category" placeholder="Main">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" name="description" placeholder="Probably amazing">
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingredients</label>
+                <input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="chicken, soy sauce, vinegar, peppercorn, bay leaf">
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </section>
+
+{% endblock %}

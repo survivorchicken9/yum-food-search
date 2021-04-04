@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header><h1>Search for recipes</h1></header>
+    <section class="create-recipe-form mb-3">
+        <form method="post">
+            <div class="form-group">
+                <label for="ingredients">Ingredients you have</label>
+                <input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="chicken, soy sauce, vinegar, peppercorn, bay leaf">
+            </div>
+            <button type="submit" class="btn btn-primary" name="search" value="search">Search</button>
+            <button type="submit" class="btn btn-danger" name="clear" value="clear">Clear previous search</button>
+        </form>
+    </section>
+<header><h1>Found Recipes</h1></header>
+<section>
+    <div class="mb-3">Your ingredients: {% for ingredient in session["ingredients"] %} {{ ingredient }} {% endfor %}</div>
+    <div class="list-group mb-3">
+        {% for recipe in result_recipes %}
+            <div class="list-group-item">
+                <h4>{{ recipe["name"] }}</h4>
+                <p>
+                    {{ recipe["description"] }}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

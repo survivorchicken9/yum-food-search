@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+    <h1>All Recipes</h1>
+</header>
+<section>
+    <div class="list-group mb-3">
+        {% for recipe in recipes %}
+            <div class="list-group-item">
+                <h4>{{ recipe.name }}</h4>
+                <p>
+                    {{ recipe.description }}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+    <a class="btn btn-primary" href="{{ url_for('recipes.new_recipe') }}">
+        Add new recipe
+    </a>
+</section>
+{% endblock %}
