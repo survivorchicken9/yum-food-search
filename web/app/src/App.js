@@ -1,19 +1,24 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './containers/Home.js';
+import SearchContainer from './containers/SearchContainer';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          byroncooks
-          <h1>Filipino Food</h1>
-          <h3>for the homesick and hungry</h3>
-        </header>
+        <Switch>
+          <Route exact path="/search">
+            <SearchContainer />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
-}
+};
 
 export default App;
